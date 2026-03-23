@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitish | Web Design & Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Nitish</a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#services">Services <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#portfolio">Website Development</a></li>
+                    </ul>
+                </li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0qJeBy2r-eM4VhzN0evixC1f1kEiwTYPd1CkiHNzn9pDWvg/viewform?usp=publish-editor" class="btn-cta" target="_blank">Book a Call</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                We build websites that<br>
+                <span class="underline-text">grow your business</span>
+            </h1>
+            <p class="hero-subtitle">
+                Premium web design, Next.js development, and SEO optimization. We deliver stunning, high-performing websites tailored to scale your brand.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0qJeBy2r-eM4VhzN0evixC1f1kEiwTYPd1CkiHNzn9pDWvg/viewform?usp=publish-editor" class="btn-primary" target="_blank">
+                <span class="sparkles">✨</span> Book a Call
+            </a>
+        </div>
+        
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header-inline">
+                <h2 class="section-title-large">Portfolio</h2>
+                <p class="section-subtitle-inline">Building up your business from local to global</p>
+            </div>
+            <div class="portfolio-carousel-wrapper">
+                <button class="carousel-btn prev-btn" aria-label="Previous" id="portfolio-prev">&#10094;</button>
+                
+                <div class="portfolio-carousel" id="portfolio-carousel">
+                    <div class="portfolio-card carousel-card">
+                        <a href="https://triviaclothing.netlify.app/" target="_blank" class="portfolio-image" style="display: block;">
+                            <img src="images/triviaClothing.png" alt="Trivia Clothing" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                        </a>
+                        <div class="portfolio-info">
+                            <h3>Women Clothing Website</h3>
+                            <p>Elegant e-commerce platform for women's fashion, featuring the latest collections, intuitive product galleries, and secure...</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card carousel-card">
+                        <a href="https://shoewearshop.netlify.app/" target="_blank" class="portfolio-image" style="display: block;">
+                            <img src="images/shoeShop.png" alt="shoe Shop" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                        </a>
+                        <div class="portfolio-info">
+                            <h3>Foot Wear Website</h3>
+                            <p>Sleek e-commerce website for a footwear brand, showcasing product collections, high‑resolution galleries, size guides, and secure checkout.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card carousel-card">
+                        <a href="https://fashionistaworld.netlify.app/" target="_blank" class="portfolio-image" style="display: block;">
+                            <img src="images/fashionista.png" alt="Fashionista World" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                        </a>
+                        <div class="portfolio-info">
+                            <h3>Women Clothing Website</h3>
+                            <p>Curated catalog-style website for a textile brand, showcasing seasonal collections with high‑resolution swatches and organized categories...</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card carousel-card">
+                        <a href="https://clothingtextiles.netlify.app/" target="_blank" class="portfolio-image" style="display: block;">
+                            <img src="images/metroTex.png" alt="Clothing Textiles" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                        </a>
+                        <div class="portfolio-info">
+                            <h3>Metro Tex Website</h3>
+                            <p>Showcase site for women's apparel with curated collections, large imagery, simple category browsing, and fabric details — browse-only...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" aria-label="Next" id="portfolio-next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header-inline">
+                <h2 class="section-title-large">Pricing</h2>
+                <p class="section-subtitle-inline">It's not a expense, it's just an investment</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card green-card">
+                    <h3 class="pricing-name">landing page</h3>
+                    <p class="pricing-desc">A professional page with contact form and automatic emails. Quickly online.</p>
+                    <div class="pricing-label">SINGLE PAYMENT/ INSTALLMENTS - starts from*</div>
+                    <div class="pricing-amount">₹2,999</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 1 page (landing page)</li>
+                        <li><span class="check">✓</span> Contact form</li>
+                        <li><span class="check">✓</span> Automatic emails</li>
+                        <li><span class="check">✓</span> Mobile optimized</li>
+                        <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing green">Get Started →</a>
+                </div>
+                <div class="pricing-card blue-card">
+                    <div class="popular-badge">POPULAR</div>
+                    <h3 class="pricing-name">standard</h3>
+                    <p class="pricing-desc">The perfect start for professional demands. </p>
+                    <div class="pricing-label">SINGLE PAYMENT/ INSTALLMENTS - starts from*</div>
+                    <div class="pricing-amount">₹5,999</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 3 pages</li>
+                        <li><span class="check">✓</span> Contact form</li>
+                        <li><span class="check">✓</span> Automatic emails</li>
+                        <li><span class="check">✓</span> Mobile optimized</li>
+                        <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing blue">Get Started →</a>
+                </div>
+                <div class="pricing-card purple-card">
+                    <div class="popular-badge">ON DEMAND</div>
+                    <h3 class="pricing-name">e-commerce</h3>
+                    <p class="pricing-desc">Professional e‑shop foundation — built for conversions and fast growth.</p>
+                    <div class="pricing-label">SINGLE PAYMENT/ INSTALLMENTS - starts from*</div>
+                    <div class="pricing-amount">₹9,999</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 3+ pages</li>
+                        <li><span class="check">✓</span> Automatic emails</li>
+                        <li><span class="check">✓</span> Detailed Dashboard</li>
+                        <li><span class="check">✓</span> Payment Integration</li>
+                        <li><span class="check">✓</span> Contact form</li>
+                        <li><span class="check">✓</span> Mobile optimized</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing purple">Get Started →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section 1 -->
+    <section class="cta-section dark">
+        <div class="container">
+            <h2 class="cta-title">Ready for your project?</h2>
+            <p class="cta-subtitle">Let's create something extraordinary together. We look forward to hearing from you.</p>
+            <div class="cta-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0qJeBy2r-eM4VhzN0evixC1f1kEiwTYPd1CkiHNzn9pDWvg/viewform?usp=publish-editor" class="btn-cta-white" target="_blank">Book a Call →</a>
+                <a href="tel:+918675851166" class="btn-icon">📞</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title-center">What Clients Say</h2>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"We launched our online store with Nitish and the result is fantastic — a beautiful, conversion‑focused site with crisp product galleries and flawless mobile performance. The process was fast, professional, and stress‑free. Highly recommended for any women's clothing brand looking to scale."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sowmiya</h4>
+                        <p>Women Clothing Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="section-header-inline">
+                <h2 class="section-title-large">Results</h2>
+                <p class="section-subtitle-inline">Websites optimized for real results.</p>
+            </div>
+            <div class="results-grid">
+                <div class="results-chart">
+                    <canvas id="growthChart"></canvas>
+                </div>
+                <div class="results-content">
+                    <h3>Websites built for real business results</h3>
+                    <div class="results-features">
+                        <div class="feature-item">
+                            <h4>OnPage SEO</h4>
+                            <p>Ready to be found on Google.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Tracking & Analytics</h4>
+                            <p>Track user statistics, marketing cookies and more.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>100% Responsive</h4>
+                            <p>Optimized for desktop, tablet, mobile and everything in between.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>ROI-First</h4>
+                            <p>So you get the most out of your ad budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header-inline">
+                <h2 class="section-title-large">FAQ</h2>
+                <p class="section-subtitle-inline">Straight answers to your questions.</p>
+            </div>
+            <div class="faq-container">
+                <h3 class="faq-category">Good to know</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why Nitish?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Direct communication, fast delivery, and websites built with modern technology. No teams, no overhead — just quality work focused on your success.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does it take?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A landing page takes 3-5 days. A standard website takes 1-2 weeks. Complex projects may take longer depending on requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How much does a website cost?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Prices start at ₹2,999 for a landing page and ₹5,999 for a standard website. Custom projects are quoted individually based on your needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What technologies does Nitish use?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I primarily use React.js, Node.js, and modern web technologies for fast, SEO-friendly websites. The tech stack is chosen based on your project needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Are Nitish websites SEO-optimized?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! All websites include on-page SEO optimization, meta tags, performance optimization, and structured data to help you rank on Google.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you offer in-person consultations?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, I'm available for video calls and can arrange in-person meetings if you're in the same city.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why not use a page builder like Wix or Squarespace?</span>
+                            <span class="faq-icon">⌄</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Custom-coded websites are faster, more flexible, and better for SEO. You get exactly what you need without the limitations of templates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header-inline">
+                <h2 class="section-title-large">About</h2>
+                <p class="section-subtitle-inline">The mind behind Nitish.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-image">
+                    <div class="about-photo">
+                        <div class="photo-placeholder">N</div>
+                        <div class="photo-label">
+                            <h3>Nitish</h3>
+                            <p>20 years old · India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>One mind, clear vision.</h3>
+                    <p>I'm Nitish — a solo developer who cares about doing the right work, not the most work. I run projects end-to-end myself so you get clear communication, fast decisions, and results that actually move the needle.</p>
+                    <p>No layers of sign-offs, no wasted hours — just practical, well-crafted websites delivered on time. If you want a partner who treats your business like his own and gets things done, let's build it together.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4>100%</h4>
+                            <p>Satisfied Clients</p>
+                        </div>
+                        <!-- <div class="stat-item">
+                            <h4>March 19, 2026</h4>
+                            <p>Agency Founded</p>
+                        </div> -->
+                    </div>
+                    <div class="about-tags">
+                        <span class="tag">WEB DEVELOPMENT</span>
+                        <span class="tag">UI/UX DESIGN</span>
+                        <span class="tag">AUTOMATION</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="cta-section dark final">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-left">
+                    <p class="cta-label">Get in touch</p>
+                    <h2 class="cta-title-large">Ready for your project?</h2>
+                    <p class="cta-text">Let's get started together. Send me a request and receive a response within 12 hours.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0qJeBy2r-eM4VhzN0evixC1f1kEiwTYPd1CkiHNzn9pDWvg/viewform?usp=publish-editor" class="btn-start" target="_blank">
+                        <span class="plus-icon">+</span> START PROJECT
+                    </a>
+                </div>
+                <div class="cta-right">
+                    <div class="cta-info-card">
+                        <h3>Nitish</h3>
+                        <p class="info-subtitle">Web Design & Software Development</p>
+                        <div class="availability-badge">
+                            <span class="status-dot"></span> Available for new projects
+                        </div>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <strong>Our Location</strong>
+                                <p>India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Nitish. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
