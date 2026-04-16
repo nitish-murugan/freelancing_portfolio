@@ -1219,13 +1219,15 @@ ul {
     .carousel-card {
         flex: 0 0 100%; /* 1 item on mobile */
     }
+    .portfolio-carousel {
+        gap: 0;
+        padding: 0;
+    }
     .portfolio-carousel-wrapper {
-        gap: 8px;
+        gap: 0;
     }
     .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
+        display: none;
     }
 }
 
