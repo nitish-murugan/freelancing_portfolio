@@ -1169,6 +1169,70 @@ ul {
     }
 }
 
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .nav-container {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: 100px 0 40px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin: 0 auto 30px;
+    }
+
+    .section-title-large {
+        font-size: 28px;
+    }
+
+    .results-chart {
+        padding: 20px;
+        max-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .results-chart canvas {
+        max-width: 100% !important;
+        max-height: 250px !important;
+    }
+
+    .btn-primary {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+    .carousel-dots {
+        margin-top: 16px;
+        gap: 6px;
+    }
+
+    .carousel-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .carousel-dot.active {
+        width: 20px;
+    }
+}
+
 /* Portfolio Carousel Styles */
 .portfolio-carousel-wrapper {
     position: relative;
@@ -1208,6 +1272,7 @@ ul {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     z-index: 10;
     flex-shrink: 0;
+    position: relative;
 }
 
 .carousel-btn:hover {
@@ -1222,13 +1287,53 @@ ul {
     .portfolio-carousel {
         gap: 0;
         padding: 0;
+        flex: 1;
+        min-width: 0;
     }
     .portfolio-carousel-wrapper {
-        gap: 0;
+        gap: 8px;
+        padding: 0 8px;
+        justify-content: center;
+        align-items: center;
     }
     .carousel-btn {
-        display: none;
+        display: flex !important;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        flex-shrink: 0;
+        padding: 0;
+        visibility: visible;
+        opacity: 1;
     }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.carousel-dot.active {
+    background: var(--text-primary);
+    width: 24px;
+    border-radius: 4px;
+}
+
+.carousel-dot:hover {
+    background: var(--text-secondary);
 }
 
 .portfolio-carousel::-webkit-scrollbar {

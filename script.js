@@ -320,17 +320,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.getElementById('portfolio-carousel');
     const prevBtn = document.getElementById('portfolio-prev');
     const nextBtn = document.getElementById('portfolio-next');
+    const dotsContainer = document.getElementById('carousel-dots');
 
     if (carousel && prevBtn && nextBtn) {
-        // Calculate scroll amount based on card width + gap
+        // Get all carousel cards
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const cardCount = cards.length;
+
+        // Create dots
+        if (dotsContainer) {
+            for (let i = 0; i < cardCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', () => {
+                    const card = carousel.querySelector('.carousel-card');
+                    if (card) {
+                        const scrollAmount = (card.offsetWidth + 32) * i;
+                        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Calculate scroll amount based on card width + actual gap
         const getScrollAmount = () => {
             const card = carousel.querySelector('.carousel-card');
             if (card) {
-                // width + gap (32px)
-                return card.offsetWidth + 32;
+                // Get the actual gap from computed styles (32px on desktop, 0 on mobile)
+                const gapStyle = window.getComputedStyle(carousel).gap;
+                const gap = parseInt(gapStyle) || 0;
+                return card.offsetWidth + gap;
             }
             return 350; // fallback
         };
+
+        // Update active dot on scroll
+        const updateActiveDot = () => {
+            if (!dotsContainer) return;
+            
+            const card = carousel.querySelector('.carousel-card');
+            if (!card) return;
+
+            const cardWidth = card.offsetWidth + 32;
+            const currentScroll = carousel.scrollLeft;
+            const activeIndex = Math.round(currentScroll / cardWidth);
+
+            const dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === Math.min(activeIndex, cardCount - 1));
+            });
+        };
+
+        carousel.addEventListener('scroll', updateActiveDot);
 
         prevBtn.addEventListener('click', () => {
             if (carousel.scrollLeft <= 10) {
