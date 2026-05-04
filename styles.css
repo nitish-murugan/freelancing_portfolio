@@ -1283,6 +1283,7 @@ ul {
 @media (max-width: 768px) {
     .carousel-card {
         flex: 0 0 100%; /* 1 item on mobile */
+        min-width: 100%;
     }
     .portfolio-carousel {
         gap: 0;
@@ -1305,6 +1306,18 @@ ul {
         padding: 0;
         visibility: visible;
         opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-carousel-wrapper {
+        padding: 0;
+    }
+
+    .carousel-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
     }
 }
 

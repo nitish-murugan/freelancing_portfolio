@@ -23,12 +23,15 @@ mobileNavStyles.textContent = `
     .mobile-nav {
         display: none;
         position: fixed;
-        top: 69px;
-        left: 0;
-        right: 0;
+        top: 72px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92vw, 420px);
         background: var(--bg-primary);
-        border-bottom: 1px solid var(--border-color);
-        padding: 24px;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+        padding: 18px 16px;
         z-index: 999;
     }
 
@@ -39,19 +42,26 @@ mobileNavStyles.textContent = `
     .mobile-nav-links {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 8px;
     }
 
     .mobile-nav-links a {
-        padding: 12px 0;
+        padding: 12px 10px;
         color: var(--text-secondary);
         font-size: 16px;
         font-weight: 500;
+        border-radius: 10px;
         border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-nav-links a:hover {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
     }
 
     .mobile-nav-links .mobile-cta {
-        margin-top: 8px;
+        margin-top: 10px;
         padding: 14px;
         background: var(--text-primary);
         color: var(--bg-primary);
@@ -59,15 +69,40 @@ mobileNavStyles.textContent = `
         border-radius: 8px;
         border: none;
     }
+
+    @media (max-width: 480px) {
+        .mobile-nav {
+            width: calc(100vw - 20px);
+            max-height: calc(100vh - 110px);
+            overflow-y: auto;
+            border-radius: 14px;
+            padding: 14px;
+        }
+
+        .mobile-nav-links a {
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
 `;
 document.head.appendChild(mobileNavStyles);
 navbar.appendChild(mobileNav);
+
+const setMobileNavTop = () => {
+    if (navbar) {
+        mobileNav.style.top = `${navbar.offsetHeight + 8}px`;
+    }
+};
+
+setMobileNavTop();
+window.addEventListener('resize', setMobileNavTop);
 
 // Toggle mobile menu
 if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
         mobileMenuBtn.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });
 
     // Close mobile menu when clicking a link
@@ -75,7 +110,21 @@ if (mobileMenuBtn) {
         link.addEventListener('click', () => {
             mobileNav.classList.remove('active');
             mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
         });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!mobileNav.classList.contains('active')) return;
+
+        const clickedInsideMenu = mobileNav.contains(event.target);
+        const clickedMenuButton = mobileMenuBtn.contains(event.target);
+
+        if (!clickedInsideMenu && !clickedMenuButton) {
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 }
 
@@ -336,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.addEventListener('click', () => {
                     const card = carousel.querySelector('.carousel-card');
                     if (card) {
-                        const scrollAmount = (card.offsetWidth + 32) * i;
+                        const scrollAmount = getScrollAmount() * i;
                         carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
                     }
                 });
@@ -363,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = carousel.querySelector('.carousel-card');
             if (!card) return;
 
-            const cardWidth = card.offsetWidth + 32;
+            const cardWidth = getScrollAmount();
             const currentScroll = carousel.scrollLeft;
             const activeIndex = Math.round(currentScroll / cardWidth);
 
